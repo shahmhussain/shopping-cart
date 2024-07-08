@@ -27,6 +27,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCartItemQuantity, getTotalCostOfItem } from "./CheckoutPageHelper";
 import { boldHeading } from "./CheckoutPageStyles";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ export const CheckoutPage = () => {
     <div data-testid="checkout-page">
       <Button
         style={{ marginTop: "1em" }}
+        startIcon={<ArrowBackIcon/>}
         variant="outlined"
         onClick={() => navigate("/")}
       >
