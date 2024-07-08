@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ItemsListPage } from "./pages/ItemsList/ItemsListPage";
+import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
+import Layout from "./components/Layout/Layout";
+import { CartItem } from "./data/interfaces/CartData.interface";
+import defaultCartData from "./data/cart_data.json";
+import { CartContext } from "./utils/CartContext";
 
 function App() {
+  const [cartData, setCartData] = useState<CartItem[]>(defaultCartData.cart);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <CartContext.Provider value={{ cartData, setCartData }}>
+                <ItemsListPage />
+              </CartContext.Provider>
+            }
+          />
+          <Route
+            path="checkout"
+            element={
+              <CartContext.Provider value={{ cartData, setCartData }}>
+                <CheckoutPage/>
+              </CartContext.Provider>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
