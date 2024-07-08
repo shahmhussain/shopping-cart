@@ -1,11 +1,16 @@
 # Shopping Cart App
 
-Created this app using everything described and using
+Created this app using everything requested in the tech test sheet including:
+
 - React
-- React Context API
-- Hooks
 - Typescript
+- React Context API
+Note: I over-engineering this project to use useContext; this was not necessary as the props were only nested one level deep.
+I added this into the project as it was requested in the tech test
+- Hooks
 - MUI
+- React Testing Library
+- Cypress
 
 ## Running the app
 - cd shopping-cart-app
@@ -20,7 +25,7 @@ Created this app using everything described and using
 
 
 # End to end Testing 
-- Cypress, added a basic cypress test just to showcase my skills
+- Cypress, added a basic cypress test just to showcase my knowledge of Cypress
 - Used data-testid to make sure e2e tests were not brittle
 
 ## Running e2e tests
