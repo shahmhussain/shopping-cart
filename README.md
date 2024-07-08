@@ -9,7 +9,7 @@ Created this app using everything described and using
 
 ## Running the app
 - cd shopping-cart-app
-- For First time installation, please run 'npm i'
+- For first time installation, please run 'npm i'
 - npm run start
 
 # Unit Testing
@@ -26,5 +26,5 @@ Created this app using everything described and using
 ## Running e2e tests
 - In one terminal window make sure you have the app open on localhost (see section 'running the app')
 - Open another terminal window and change into the 'cypress-tests' folder
-- For First time installation, please run 'npm i'
+- For first time installation, please run 'npm i'
 - Then run 'npm cy:open' to open the tests
